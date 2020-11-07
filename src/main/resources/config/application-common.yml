@@ -1,0 +1,14 @@
+zuul:
+  host:
+    connect-timeout-millis: 3000
+    socket-timeout-millis: 3000
+  routes:
+    svcmesh:
+      path: /svcmesh/**
+  retryable: true
+
+svcmesh:
+  ribbon:
+    listOfServers: ${backend_services:http://localhost:8001}
+
+     
